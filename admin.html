@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="container nav">
+            <h1>QuizMaster Admin</h1>
+            <a href="/" class="nav-link">Quiz</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Add Question</h2>
+            <form id="question-form">
+                <input id="question_text" placeholder="Question" required>
+                <input id="option_a" placeholder="Option A" required>
+                <input id="option_b" placeholder="Option B" required>
+                <input id="option_c" placeholder="Option C" required>
+                <input id="option_d" placeholder="Option D" required>
+                <select id="correct_option" required>
+                    <option value="">Correct option</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+                <button class="btn success" type="submit">Add Question</button>
+            </form>
+            <p id="admin-message" class="message"></p>
+        </section>
+
+        <section class="card">
+            <h2>Question Bank</h2>
+            <div id="question-list"></div>
+        </section>
+    </main>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
