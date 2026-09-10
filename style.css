@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+.container {
+    width: min(1000px, 92%);
+    margin: auto;
+}
+
+.topbar {
+    background: #172033;
+    color: white;
+    padding: 16px 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav h1 {
+    font-size: 22px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border: 1px solid #ffffff55;
+    border-radius: 8px;
+}
+
+.hero {
+    text-align: center;
+    padding: 45px 0 25px;
+}
+
+.hero h2 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 28px;
+    margin: 20px 0 35px;
+    box-shadow: 0 8px 30px #17203318;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.question-title {
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.option {
+    display: block;
+    border: 1px solid #d8dfeb;
+    border-radius: 10px;
+    padding: 14px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.option:hover {
+    border-color: #526dff;
+    background: #f6f8ff;
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.btn {
+    border: 0;
+    border-radius: 9px;
+    padding: 12px 20px;
+    background: #526dff;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.success {
+    background: #168a5b;
+}
+
+.message {
+    text-align: center;
+    margin: 15px 0;
+    color: #c0392b;
+}
+
+form {
+    display: grid;
+    gap: 12px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd4e2;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.admin-question {
+    border-bottom: 1px solid #e2e7ef;
+    padding: 15px 0;
+}
+
+.admin-question:last-child {
+    border-bottom: 0;
+}
+
+.delete-btn {
+    margin-top: 8px;
+    background: #d64545;
+}
+
+.result-page {
+    padding-top: 100px;
+}
+
+.result-card {
+    text-align: center;
+}
+
+.result-score {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+    .hero h2 {
+        font-size: 26px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        text-align: center;
+    }
+}
