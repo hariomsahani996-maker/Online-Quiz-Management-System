@@ -16,8 +16,7 @@ const pool = mysql.createPool({
 });
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(__dirname));
 app.get('/api/questions', async (req, res) => {
     try {
         const [rows] = await pool.query(
@@ -146,9 +145,8 @@ app.delete('/api/admin/questions/:id', async (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
-
 app.listen(PORT, () => {
     console.log(`Online Quiz Management System running at http://localhost:${PORT}`);
 });
