@@ -6,14 +6,27 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const express = require('express');
+const mysql = require('mysql2/promise');
+const path = require('path');
+require('dotenv').config();
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// DATABASE CONNECTION
 const pool = mysql.createPool({
-    host: process.env.DB_HOST || 'localhost',
-    user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || 'root',
-    database: process.env.DB_NAME || 'online_quiz',
-    waitForConnections: true,
-    connectionLimit: 10
+  host: process.env.MYSQLHOST || process.env.DB_HOST || 'localhost',
+  port: Number(process.env.MYSQLPORT || process.env.DB_PORT || 3306),
+  user: process.env.MYSQLUSER || process.env.DB_USER || 'root',
+  password: process.env.MYSQLPASSWORD || process.env.DB_PASSWORD || 'root',
+  database: process.env.MYSQLDATABASE || process.env.DB_NAME || 'online_quiz',
+  waitForConnections: true,
+  connectionLimit: 10
 });
+
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
 app.use(express.static(__dirname));
